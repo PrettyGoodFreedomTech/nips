@@ -9,7 +9,7 @@ This NIP defines lists of things that users can create and that anyone can add t
 
 We introduce a single event kind: `9999`, which is used either to create a new list or to add an item to a list. A list can be an item on another list, in which case we can refer to their relationship as parent-child (alternatively: hypernym-hyponym).
 
-## tags
+## Tags
 
 The `z` tag is required and defines the category or categories to which the kind `9999` note belongs. It must be a string, and can be either human readable or an event id. There can be multiple z-tags. There is a special `z` tag: `*`, which defines a new list. 
 
@@ -19,7 +19,9 @@ The `required`, `allowed` and `disallowed` tags are optional and specify which d
 
 If `z` type is `*` (I would use `list` in place of `*`, but the meaning of `*` is going to morph over time into something more complicated: a `concept`; `*` is special in the sense that it can be an element of itself), then the `name` tag is required, and must have two strings: a singular form ("widget") and a plural form ("widgets"), as in the examples below. Think of the `z` tag as the "element of" operator.
 
-Optional: `name`, `name_singular`, `name_plural`, `description`, `title`, `comments`
+Optional: `name`, `description`, `title`, `comments`
+
+## Examples
 
 ### Example 1: a list of AI-controlled profiles (pubkeys)
 
