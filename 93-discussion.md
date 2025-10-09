@@ -25,6 +25,8 @@ There are a handful of lists that we will want to curate that will help us to bu
 
 You read that right: wordType is an item on the list of wordTypes. The mind boggles with remembrances of Cantor set theory. Can a set be an element of itself? This is the kind of question that we will avoid entirely with NIP-93, but which we will want to have thought about ahead of time. The answer is yes, the formalism of the Concept Graph allows word type to be an element of itself. Trust me that this will not set us up to hit a wall; rather, this is how we avoid hitting any walls.
 
+Note: actually Concept Graph theory resolves this issue in set theory by declaration two word types within a concept: we saparate wordType nodes from superset nodes. Words of word type: wordType are elements of a node of wordType: superset, all within the word type concept.
+
 The great thing is that we won't necessarily need a NIP to declare word types. We can propose them, but our grapevines will help us to curate these lists!
 
 ## Notes
