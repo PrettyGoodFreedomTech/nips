@@ -17,7 +17,7 @@ The `p`, `e`, `t`, and `a` tags are required, allowed, or disallowed if their pa
 
 The `required`, `allowed` and `disallowed` tags are optional and specify which data types ("p", "e", "t", "a") are required, allowed, or disallowed in child notes.  
 
-If `z` type is `*` (I would use `list` in place of `*`, but the meaning of `*` is going to morph over time into something more complicated: a `concept`; `*` is special in the sense that it can be an element of itself), then the `name` tag is required, and must have two strings: a singular form ("widget") and a plural form ("widgets"), as in the examples below. Think of the `z` tag as the "element of" operator. If the `title` tag is used, it should likewise have the singular and plural forms.
+If `z` type is `*` (I would use `list` in place of `*`, but the meaning of `*` is going to morph over time into something more complicated: a `concept`; `*` is special in the sense that it can be an element of itself), then the `names` tag is required, and must have two strings: a singular form ("widget") and a plural form ("widgets"), as in the examples below. Think of the `z` tag as the "element of" operator. If the `title` tag is used, it should likewise have the singular and plural forms.
 
 Optional: `name`, `description`, `title`, `comments`
 
@@ -32,7 +32,7 @@ List creation:
   "kind": 9999,
   "tags": [
     ["z", "*"],
-    ["name", "AI bot", "AI bots"],
+    ["names", "AI bot", "AI bots"],
     ["description", "This is a list of nostr accounts that are automated and controlled by some sort of AI bot"],
     ["required", "p", "name"]
   ],
@@ -62,7 +62,7 @@ List creation:
   "kind": 9999,
   "tags": [
     ["z", "*"],
-    ["name", "long form article on hyperinflation", "long form articles on hyperinflation"],
+    ["names", "long form article on hyperinflation", "long form articles on hyperinflation"],
     ["description", "This is a list of long form content events on the topic of hyperinflation"],
     ["required", "a", "title"]
   ],
@@ -92,7 +92,7 @@ List creation:
   "kind": 9999,
   "tags": [
     ["z", "*"],
-    ["name", "dog name", "dog names"],
+    ["names", "dog name", "dog names"],
     ["description", "This is a list of dog names"],
     ["required", "t"]
   ],
@@ -121,7 +121,7 @@ Create a list of dogs and a list of animals:
   "kind": 9999,
   "tags": [
     ["z", "*"],
-    ["name", "dog", "dogs"],
+    ["names", "dog", "dogs"],
     ["description", "This is a list (by name) of individual dogs"],
     ["required", "t"]
   ],
@@ -134,7 +134,7 @@ Create a list of dogs and a list of animals:
   "kind": 9999,
   "tags": [
     ["z", "*"],
-    ["name", "animal", "animals"],
+    ["names", "animal", "animals"],
     ["description", "This is a list of animals"],
     ["required", "t"]
   ],
@@ -179,7 +179,7 @@ Create a list of the lists of long form articles
   "kind": 9999,
   "tags": [
     ["z", "*"],
-    ["name", "list of long form articles", "lists of long form articles"],
+    ["names", "list of long form articles", "lists of long form articles"],
     ["description", "This is a list of lists of long form articles"],
     ["required", "e"]
   ],
