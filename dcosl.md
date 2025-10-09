@@ -187,14 +187,13 @@ Create a list of the lists of long form articles
 }
 ```
 
-**UNFINISHED** Not sure whether the z-tag below should include "*" (in which case it needs name, singular and plural) or not --- is it a subset of wordType or a specific instance of wordType?????
-Now add an item to the above list. Note that it points to the event above. 
+Now add an item to the above list. Note that it points to the event above, from Example 2. 
 
 ```json
 {
   "kind": 9999,
   "tags": [
-    ["z", "*", "id_list_of_articles"],
+    ["z", "id_list_of_articles"],
     ["e", "id_hyperinflation"],
   ],
   "id": "foo"
