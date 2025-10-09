@@ -170,3 +170,34 @@ An alternate and equivalent way to add Fido to these two lists is to provide eac
 The above can be translated: "Fido is a dog" and "Fido is an animal".
 
 However, it is encouraged to use the list id if an appropriate one is known and available.
+
+### Example 5: A list of lists
+
+Create a list of the lists of long form articles
+
+```json
+{
+  "kind": 9999,
+  "tags": [
+    ["z", "*"],
+    ["name", "list of long form articles", "lists of long form articles"],
+    ["description", "This is a list of lists of long form articles"],
+    ["required", "e"]
+  ],
+  "id": "id_list_of_articles"
+}
+```
+Now add an item to the above list. Note that it is a copy of the event above, except that "id_list_of_articles" has been added to the `z` tag.
+
+```json
+{
+  "kind": 9999,
+  "tags": [
+    ["z", "*", "id_list_of_articles"],
+    ["name", "long form article on hyperinflation", "long form articles on hyperinflation"],
+    ["description", "This is a list of long form content events on the topic of hyperinflation"],
+    ["required", "a"]
+  ],
+  "id": "id_hyperinflation"
+}
+```
