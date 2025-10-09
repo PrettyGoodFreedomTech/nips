@@ -17,9 +17,10 @@ The `p`, `e`, `t`, and `a` tags are required, allowed, or disallowed if their pa
 
 The `required`, `allowed` and `disallowed` tags are optional and specify which data types ("p", "e", "t", "a") are required, allowed, or disallowed in child notes.  
 
-If `z` type is `*` (I would use `list` in place of `*`, but the meaning of `*` is going to morph over time into something more complicated: a `concept`; `*` is special in the sense that it can be an element of itself), then the `names` tag is required, and must have two strings: a singular form ("widget") and a plural form ("widgets"), as in the examples below. Think of the `z` tag as the "element of" operator. If the `title` tag is used, it should likewise have the singular and plural forms.
+If `z` type is `*` (I would use `list` in place of `*`, but the meaning of `*` is going to morph over time into something more complicated: a `concept`; `*` is special in the sense that it can be an element of itself), then the `names` tag is required, and must have two strings: a singular form ("widget") and a plural form ("widgets"), as in the examples below. Think of the `z` tag as the "element of" operator. If the `titles` tag is used, it should likewise have the singular and plural forms.
 
-Optional: `name`, `description`, `title`, `comments`
+Optional for `z` contains `*`: `names`, `titles`, `slugs`
+Optional for `z` does not contain `*`: `name`, `title`, `slug`, `description`, `comments`
 
 ## Examples
 
@@ -199,3 +200,27 @@ Now add an item to the above list. Note that it points to the event above, from 
   "id": "foo"
 }
 ```
+
+## Retrieval
+
+Retrieval of all lists:
+
+```json
+{
+  "since": 0,
+  "kinds": [9999], // or 39999
+  "authors": ["c51a542e4f93afe6f45e5bef002f7a0efcc0a47460a736654c0bee5402c482fa"],
+  "#z": ["*"]
+}
+```
+
+Retrieval of all items on the list of dogs:
+
+```json
+{
+  "since": 0,
+  "kinds": [9999], // or 39999
+  "#z": ["id_dogs", "dog"]
+}
+```
+
