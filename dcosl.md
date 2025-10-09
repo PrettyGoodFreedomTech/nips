@@ -187,7 +187,7 @@ Create a list of the lists of long form articles
 }
 ```
 
-**UNFINISHED** Not sure whether the z-tag below should be "*" (in which case it needs name, singular and plural) or not --- is it a subset of wordType rather than specific instance?????
+**UNFINISHED** Not sure whether the z-tag below should include "*" (in which case it needs name, singular and plural) or not --- is it a subset of wordType rather than specific instance?????
 Now add an item to the above list. Note that it points to the event above. 
 
 ```json
