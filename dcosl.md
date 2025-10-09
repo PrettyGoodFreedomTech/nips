@@ -17,7 +17,7 @@ The `p`, `e`, `t`, and `a` tags are required, allowed, or disallowed if their pa
 
 The `required`, `allowed` and `disallowed` tags are optional and specify which data types ("p", "e", "t", "a") are required, allowed, or disallowed in child notes.  
 
-If `z` type is `*` (or might just use `list`), then the `name` tag is required, and must have two strings: a singular form ("widget") and a plural form ("widgets"), as in the examples below. Think of the `z` tag as the "element of" operator.
+If `z` type is `*` (I would use `list` in place of `*`, but the meaning of `*` is going to morph over time into something more complicated: a `concept`; `*` is special in the sense that it can be an element of itself), then the `name` tag is required, and must have two strings: a singular form ("widget") and a plural form ("widgets"), as in the examples below. Think of the `z` tag as the "element of" operator.
 
 Optional: `name`, `name_singular`, `name_plural`, `description`, `title`, `comments`
 
