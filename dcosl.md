@@ -17,7 +17,7 @@ The `p`, `e`, `t`, and `a` tags are required, allowed, or disallowed if their pa
 
 The `required`, `allowed` and `disallowed` tags are optional and specify which data types ("p", "e", "t", "a") are required, allowed, or disallowed in child notes.  
 
-If `z` type is `*` (I would use `list` in place of `*`, but the meaning of `*` is going to morph over time into something more complicated: a `concept`; `*` is special in the sense that it can be an element of itself), then the `name` tag is required, and must have two strings: a singular form ("widget") and a plural form ("widgets"), as in the examples below. Think of the `z` tag as the "element of" operator.
+If `z` type is `*` (I would use `list` in place of `*`, but the meaning of `*` is going to morph over time into something more complicated: a `concept`; `*` is special in the sense that it can be an element of itself), then the `name` tag is required, and must have two strings: a singular form ("widget") and a plural form ("widgets"), as in the examples below. Think of the `z` tag as the "element of" operator. If the `title` tag is used, it should likewise have the singular and plural forms.
 
 Optional: `name`, `description`, `title`, `comments`
 
@@ -33,9 +33,8 @@ List creation:
   "tags": [
     ["z", "*"],
     ["name", "AI bot", "AI bots"],
-    ["title", "AI Bots"],
     ["description", "This is a list of nostr accounts that are automated and controlled by some sort of AI bot"],
-    ["required", "p"]
+    ["required", "p", "name"]
   ],
   "id": "id_ai_bots"
 }
@@ -65,7 +64,7 @@ List creation:
     ["z", "*"],
     ["name", "long form article on hyperinflation", "long form articles on hyperinflation"],
     ["description", "This is a list of long form content events on the topic of hyperinflation"],
-    ["required", "a"]
+    ["required", "a", "title"]
   ],
   "id": "id_hyperinflation"
 }
@@ -187,17 +186,17 @@ Create a list of the lists of long form articles
   "id": "id_list_of_articles"
 }
 ```
-Now add an item to the above list. Note that it is a copy of the event above, except that "id_list_of_articles" has been added to the `z` tag.
+
+**UNFINISHED** Not sure whether the z-tag below should be "*" (in which case it needs name, singular and plural) or not --- is it a subset of wordType rather than specific instance?????
+Now add an item to the above list. Note that it points to the event above. 
 
 ```json
 {
   "kind": 9999,
   "tags": [
     ["z", "*", "id_list_of_articles"],
-    ["name", "long form article on hyperinflation", "long form articles on hyperinflation"],
-    ["description", "This is a list of long form content events on the topic of hyperinflation"],
-    ["required", "a"]
+    ["e", "id_hyperinflation"],
   ],
-  "id": "id_hyperinflation"
+  "id": "foo"
 }
 ```
