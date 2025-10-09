@@ -17,6 +17,8 @@ The `allowed` and `disallowed` tags are optional and specify which data types ("
 
 Required: `z`
 
+If `z` type is `*`, then the `name` tag is required, and must have two strings: a singular form ("widget") and a plural form ("widgets"), as in the examples below.
+
 Optional: `name`, `name_singular`, `name_plural`, `description`, `title`, `comments`
 
 ### Example 1: a list of AI-controlled profiles (pubkeys)
@@ -28,7 +30,7 @@ List creation:
   "kind": 9999,
   "tags": [
     ["z", "*"],
-    ["name", "AI bots"],
+    ["name", "AI bot", "AI bots"],
     ["title", "AI Bots"],
     ["description", "This is a list of nostr accounts that are automated and controlled by some sort of AI bot"],
     ["allowed", "p"]
@@ -59,7 +61,7 @@ List creation:
   "kind": 9999,
   "tags": [
     ["z", "*"],
-    ["name", "long form articles on hyperinflation"],
+    ["name", "long form article on hyperinflation", "long form articles on hyperinflation"],
     ["description", "This is a list of long form content events on the topic of hyperinflation"],
     ["allowed", "a"]
   ],
@@ -89,7 +91,7 @@ List creation:
   "kind": 9999,
   "tags": [
     ["z", "*"],
-    ["name", "dog names"],
+    ["name", "dog name", "dog names"],
     ["description", "This is a list of dog names"],
     ["allowed", "t"]
   ],
@@ -118,7 +120,7 @@ Create a list of dogs and a list of animals:
   "kind": 9999,
   "tags": [
     ["z", "*"],
-    ["name", "dogs"],
+    ["name", "dog", "dogs"],
     ["description", "This is a list (by name) of individual dogs"],
     ["allowed", "t"]
   ],
@@ -131,7 +133,7 @@ Create a list of dogs and a list of animals:
   "kind": 9999,
   "tags": [
     ["z", "*"],
-    ["name", "animals"],
+    ["name", "animal", "animals"],
     ["description", "This is a list of animals"],
     ["allowed", "t"]
   ],
@@ -151,16 +153,18 @@ Now add Fido to both of the above lists.
 }
 ```
 
-An alternate and equivalent way to add Fido to these two lists is to provide each list `name` in place of the list id:
+An alternate and equivalent way to add Fido to these two lists is to provide each list `name` (singular) in place of the list id:
 
 ```json
 {
   "kind": 9999,
   "tags": [
-    ["z", "dogs", "animals"],
+    ["z", "dog", "animal"],
     ["t", "Fido"]
   ]
 }
 ```
+
+The above can be translated: "Fido is a dog" and "Fido is an animal".
 
 However, it is encouraged to use the list id if an appropriate one is known and available.
