@@ -11,13 +11,13 @@ We introduce a single event kind: `9999`, which is used either to create a new l
 
 ## tags
 
-The `z` tag defines the category or categories to which the kind `9999` note belongs. It must be a string, and can be either human readable or an event id. There can be multiple z-tags. There is a special `z` tag: `*`, which defines a new list. 
+The `z` tag is required and defines the category or categories to which the kind `9999` note belongs. It must be a string, and can be either human readable or an event id. There can be multiple z-tags. There is a special `z` tag: `*`, which defines a new list. 
 
-The `allowed` and `disallowed` tags are optional and specify which data types ("p", "e", "t", "a") are (dis)allowed in child notes.  
+The `p`, `e`, `t`, and `a` tags are required, allowed, or disallowed if their parent event specifies this to be the case. For example: the declaration of the list of AI Bots specifies that child notes must have the `p` tag.
 
-Required: `z`
+The `required`, `allowed` and `disallowed` tags are optional and specify which data types ("p", "e", "t", "a") are required, allowed, or disallowed in child notes.  
 
-If `z` type is `*`, then the `name` tag is required, and must have two strings: a singular form ("widget") and a plural form ("widgets"), as in the examples below.
+If `z` type is `*` (or might just use `list`), then the `name` tag is required, and must have two strings: a singular form ("widget") and a plural form ("widgets"), as in the examples below. Think of the `z` tag as the "element of" operator.
 
 Optional: `name`, `name_singular`, `name_plural`, `description`, `title`, `comments`
 
@@ -33,7 +33,7 @@ List creation:
     ["name", "AI bot", "AI bots"],
     ["title", "AI Bots"],
     ["description", "This is a list of nostr accounts that are automated and controlled by some sort of AI bot"],
-    ["allowed", "p"]
+    ["required", "p"]
   ],
   "id": "id_ai_bots"
 }
@@ -63,7 +63,7 @@ List creation:
     ["z", "*"],
     ["name", "long form article on hyperinflation", "long form articles on hyperinflation"],
     ["description", "This is a list of long form content events on the topic of hyperinflation"],
-    ["allowed", "a"]
+    ["required", "a"]
   ],
   "id": "id_hyperinflation"
 }
@@ -93,7 +93,7 @@ List creation:
     ["z", "*"],
     ["name", "dog name", "dog names"],
     ["description", "This is a list of dog names"],
-    ["allowed", "t"]
+    ["required", "t"]
   ],
   "id": "id_dog_names"
 }
@@ -122,7 +122,7 @@ Create a list of dogs and a list of animals:
     ["z", "*"],
     ["name", "dog", "dogs"],
     ["description", "This is a list (by name) of individual dogs"],
-    ["allowed", "t"]
+    ["required", "t"]
   ],
   "id": "id_dogs"
 }
@@ -135,7 +135,7 @@ Create a list of dogs and a list of animals:
     ["z", "*"],
     ["name", "animal", "animals"],
     ["description", "This is a list of animals"],
-    ["allowed", "t"]
+    ["required", "t"]
   ],
   "id": "id_animals"
 }
